@@ -1,0 +1,18 @@
+{
+  "name": "fozg.net-read",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jade": "^1.11.0",
+    "marked": "^0.5.2",
+    "mongoose": "^5.3.13",
+    "pug": "^2.0.3"
+  }
+}
