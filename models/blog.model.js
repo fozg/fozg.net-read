@@ -6,8 +6,12 @@ const Blog = mongoose.model('Blog', {
   title: String,
   descrition: String,
   body: String,
-  hashtag: String,
+  tags: String,
   created: Date,
-  updated: Date
+  updated: Date,
+  published: Boolean,
+  slug: String,
+  format: String, // md || draft
 });
 
+module.exports = Blog;
