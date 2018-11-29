@@ -8,9 +8,9 @@ var routes = require('./routes');
 // View engine
 app.set('views', __dirname + '/views')
 app.set('view engine', 'pug')
-
 // respond with "hello world" when a GET request is made to the homepage
 
+app.use('/static', express.static('client/build/static'))
 app.use('/', routes);
 
 mongoose.connect('mongodb://localhost/fozg-net-blogs', { useNewUrlParser: true });
