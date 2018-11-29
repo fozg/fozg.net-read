@@ -4,7 +4,7 @@ var fs = require('fs');
 const mongoose = require('mongoose');
 
 var routes = require('./routes');
-
+var api = require('./api');
 // View engine
 app.set('views', __dirname + '/views')
 app.set('view engine', 'pug')
@@ -12,6 +12,7 @@ app.set('view engine', 'pug')
 
 app.use('/static/', express.static('client/build/static'))
 app.use('/', routes);
+app.use('/api', api);
 
 mongoose.connect('mongodb://localhost/fozg-net-blogs', { useNewUrlParser: true });
 

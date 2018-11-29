@@ -1,5 +1,4 @@
-var blogMo = require('../models/blog.model');
-var marked = require('marked');
+var blogController = require('../controllers/blog.controller');
 
 function blog (req, res, next) {
 
@@ -9,11 +8,12 @@ function blog (req, res, next) {
     res.send('Something went wrong')
   }
 
-  blogMo.findOne({slug}, function (err, result) {
-    if (err || !result) {
-      res.status(404).send('Not found')
+  blogController.getBlogHTMLBySlug(slug).then(result => {
+    console.log(result)
+    if (result) {
+      res.render('blog', {content: result })
     } else {
-      res.render('blog', {content: marked(result.body) })
+      res.status(404).send('Not found')
     }
   })
 }
