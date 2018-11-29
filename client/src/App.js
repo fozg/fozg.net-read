@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import renderBlog from './render/blog';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>hello from react</h1>
-      </div>
+      <Router className="App">
+        <div>
+          <div>
+            Top navigation
+          </div>
+          <Route
+            path="/blog/:slug"
+            component={renderBlog}
+          />
+        </div>
+      </Router> 
     );
   }
 }
