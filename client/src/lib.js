@@ -2,7 +2,6 @@ import {apiEndpoint} from './consts'
 
 import { stringify } from 'querystring';
 
-
 function buildUrl(url, parameters) {
   let qs = "";
   for (const key in parameters) {
@@ -22,10 +21,12 @@ function buildUrl(url, parameters) {
 
 export class callAPI {
   constructor(url, method, body) {
-    this.url = apiEndpoint + url;
+    this.url = url;
+    this.method = method;
+    this.body = body;
   }
 
-  GET (query) {
+  async GET (query) {
     return fetch(buildUrl(this.url, query), {
       mode: 'cors',
       method: 'GET',
@@ -35,7 +36,7 @@ export class callAPI {
     }).then(res => res.json())
   }
 
-  call() {
+  async call () {
     switch(this.method) {
       case 'GET':
         return this.GET(this.body);

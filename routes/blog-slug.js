@@ -11,7 +11,7 @@ function blog (req, res, next) {
   blogController.getBlogHTMLBySlug(slug).then(result => {
     console.log(result)
     if (result) {
-      res.render('blog', {content: result })
+      res.render('blog', {content: result.body })
     } else {
       res.status(404).send('Not found')
     }
