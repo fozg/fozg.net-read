@@ -17,13 +17,13 @@ export default class SideBar extends React.Component {
     
     return (
       <div>
-         <h3>This is sidebar</h3>
-              <h3>{match && match.params.slug}</h3>
-              <ul>
-                <li><Link to="/blog/blog1">Blog 1</Link></li>
-                <li><Link to="/blog/javascript">javascript</Link></li>
-                <li></li>
-              </ul>
+        <h3>This is sidebar</h3>
+          <h3>{match && match.params.slug}</h3>
+          <ul>
+            <li><Link to="/blog/blog1">Blog 1</Link></li>
+            <li><Link to="/blog/javascript">javascript</Link></li>
+            <li></li>
+          </ul>
               
       </div>
     )

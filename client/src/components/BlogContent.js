@@ -15,11 +15,12 @@ export default class BlogContent extends React.Component {
         result => {
           console.log(result) 
           this.setState({blog: result})
-          
         }
       ).catch(e => {
         console.log(e)
       })
+    } else {
+      window.isFirstLoad = false;
     }
   }
 
@@ -30,7 +31,7 @@ export default class BlogContent extends React.Component {
 
     // console.log(' render blog, window.isFirstLoad:', window.isFirstLoad)
     if (window.isFirstLoad && this.props.slug) {      
-      window.isFirstLoad = false;
+      // window.isFirstLoad = false;
 
       if (window.serverContent !== null) {
         return (
@@ -44,8 +45,11 @@ export default class BlogContent extends React.Component {
       }      
     }
 
+    if (!blog) return false;
+    
     return (
       <div className="content">
+        <h1>{blog.title}</h1>
         <div id="clientContent">
           {blog &&
             <div dangerouslySetInnerHTML={{__html: blog.body}} />
