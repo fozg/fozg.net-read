@@ -43,8 +43,7 @@ body {
     font-family: 'PT Serif', serif;
 }
 .blogWrap {
-  max-width: 800px;
-  margin: auto;
+  width: 800px;
   line-height: 1.68;
   font-size: 1.05em;
  
@@ -95,5 +94,4 @@ hr {
 }
 em {
   font-weight: 200;
-  
 }

@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import TopNav from './components/TopNav';
 
-import blog from './routes/blog';
+import Blog from './routes/Blog';
 
 class App extends Component {
   render() {
     return (
       <Router className="App">
         <div>
+          <TopNav></TopNav>
           <Route
             path="/blog/:slug"
-            component={blog}
+            component={Blog}
           />
         </div>
       </Router> 

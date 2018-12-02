@@ -1,0 +1,18 @@
+.topnav {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: rgba(255,255,255,.98);
+}
+
+.topnav--fix {
+  border-bottom: 1px solid rgba(200,200,200,.3);
+
+}
+
+.logo {
+  width: 60px;
+  margin: 10px 0;
+}
