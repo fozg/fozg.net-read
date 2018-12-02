@@ -1,5 +1,6 @@
 var blogController = require('../controllers/blog.controller');
 
+
 function blog (req, res, next) {
 
   try {
@@ -8,10 +9,10 @@ function blog (req, res, next) {
     res.send('Something went wrong')
   }
 
-  blogController.getBlogHTMLBySlug(slug).then(result => {
-    console.log(result)
-    if (result) {
-      res.render('blog', {content: result.body })
+  blogController.getBlogHTMLBySlug(slug).then(blog => {
+    // console.log(result)
+    if (blog) {
+      res.render('blog', {content: blog.body })
     } else {
       res.status(404).send('Not found')
     }

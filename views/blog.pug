@@ -1,66 +1,8 @@
 extends layout.pug
 block content
-  style.
-    body {
-      //- font-family: Merriweather, serif;
-      font-family: 'PT Serif', serif;
-    }
-    .blogWrap {
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.68;
-      font-size: 1.05em;
-      //- letter-spacing: 0.1px;
-      font-weight: 200;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-      //- font-family: Tahoma;
-    }
-    h2 {
-      border-bottom: 1px solid #eee;
-    }
+  .container()
+    .row
+      .blogWrap
+          div#serverContent!= content
+      .sidebar
     
-    a {
-      text-decoration: none;
-      color: #009688;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background-color: rgba(27,31,35,.05);
-      font-size: 1.25em;
-      padding:2px 3px;;
-    }
-    pre code {
-      background-color: #f6f8fa;
-      font-size: 1em;
-    }
-    pre {
-      background-color: #f6f8fa;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    blockquote {
-      border-left: 2px solid #009688;
-      padding: 0px 20px;
-      font-size: 1.1em;
-      font-style: italic;
-      font-weight: 300;
-      margin: 0;
-      //- background-color: #fdfdfd;
-    }
-    hr {
-      background-color: #e1e4e8;
-      border: 0;
-      height: .25em;
-      margin: 24px 0;
-      padding: 0;
-    }
-    em {
-      font-weight: 200;
-      
-    }
-  .blogWrap
-    div!= content
