@@ -21,12 +21,6 @@ code {
   justify-content: center;
 }
 
-.sidebar {
-  width: 300px;
-  /* background: #eee; */
-  min-height: 200px;
-  border-radius: 10px;
-}
 
 #navigation {
   position: fixed;
