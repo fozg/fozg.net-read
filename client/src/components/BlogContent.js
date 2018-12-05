@@ -3,6 +3,7 @@ import React from 'react'
 import {callAPI} from '../lib';
 import {API} from '../consts'
 
+import styles from './BlogContent.module.scss';
 export default class BlogContent extends React.Component {
   state = {
     blog: null
@@ -48,8 +49,8 @@ export default class BlogContent extends React.Component {
     if (!blog) return false;
     
     return (
-      <div className="content">
-        <h1>{blog.title}</h1>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{blog.title}</h1>
         <div id="clientContent">
           {blog &&
             <div dangerouslySetInnerHTML={{__html: blog.body}} />
