@@ -1,4 +1,4 @@
-const isProduction = process.env.NODE_ENV === 'production';
+export const isProduction = process.env.NODE_ENV === 'production';
 
 export const apiEndpoint = isProduction ? 
   "http://localhost:3333/api/" : "http://localhost:3333/api/";

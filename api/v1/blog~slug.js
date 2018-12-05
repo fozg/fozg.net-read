@@ -1,6 +1,8 @@
 /**
  * GET blog via slug or id
  */
+var fcorejs = require('fcorejs');
+
 var blogController = require('../../controllers/blog.controller');
 
 module.exports = async function (req, res, next) {
@@ -12,5 +14,7 @@ module.exports = async function (req, res, next) {
   }
 
   let blog = await blogController.getBlogHTMLBySlug(query.slug);
-  res.json(blog)
+  let author = await new fcorejs(true).core.userProfile.findById(1);
+
+  res.json({...blog, author})
 }
