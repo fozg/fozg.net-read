@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Avatar from './Avatar';
+
 import {callAPI} from '../lib';
-import {API} from '../consts'
+import {API} from '../consts';
 
 import styles from './BlogContent.module.scss';
 export default class BlogContent extends React.Component {
@@ -51,6 +53,7 @@ export default class BlogContent extends React.Component {
     return (
       <div className={styles.content}>
         <h1 className={styles.title}>{blog.title}</h1>
+        <Avatar {...blog.author} imageUrl={blog.author.profileImageUrl} size="small" />
         <div id="clientContent">
           {blog &&
             <div dangerouslySetInnerHTML={{__html: blog.body}} />
