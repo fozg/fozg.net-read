@@ -4,3 +4,11 @@
 
 # fozg.net/read
 Read everything on `fozg.net`
+
+
+## Todo
+- [ ] Add Groups feature (like playlist on youtube).
+- [ ] Add Reading list feature.
+- [ ] Like feature.
+- [ ] Following FRead feature.
+- [ ] Search feature.
