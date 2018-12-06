@@ -9,7 +9,7 @@ export default class TopNav extends React.Component {
     return (
       <div className={styles.topnav}>
         <div className="container">
-          <img src={isProduction ? "/public/f-read.png": "/f-read.png"} className={styles.logo}></img>
+          <img src={isProduction ? "/public/f-read.png": "/f-read.png"} className={styles.logo} alt="f/Read"></img>
         </div>
       </div>
     )

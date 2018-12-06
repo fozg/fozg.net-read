@@ -14,13 +14,13 @@ export default ({
   size = 'medium' // [small, medium, large]
 }) => (
   <div className={styles.avatar} style={{flexDirection: size === 'large' ? 'column' : 'row'}}>
-    <img src={profileImageUrl} className={cx(styles.avtImage, styles[size])}></img>
+    <img src={profileImageUrl} className={cx(styles.avtImage, styles[size])} alt={name}></img>
     <div className={styles.namensocial}>
       <strong className={styles.name}>{name}</strong>
       {size === 'large' &&
         <div>
-          <a href="https://github.com/fozg" target="_blank" className={styles.socialIconLink}>
-            <img src={GitHubIcon} className={cx(styles.socialIcon, styles[`socialIcon-${size}`])} />
+          <a href="https://github.com/fozg" target="_blank" className={styles.socialIconLink}  rel="noopener noreferrer">
+            <img src={GitHubIcon} className={cx(styles.socialIcon, styles[`socialIcon-${size}`])} alt='github' />
           </a>
         </div>
       }

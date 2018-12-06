@@ -1,6 +1,6 @@
-import {apiEndpoint} from './consts'
+// import {apiEndpoint} from './consts'
 
-import { stringify } from 'querystring';
+// import { stringify } from 'querystring';
 
 function buildUrl(url, parameters) {
   let qs = "";

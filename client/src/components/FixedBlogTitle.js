@@ -3,8 +3,6 @@ import cx from 'classnames';
 
 import Avatar from './Avatar';
 
-import {isProduction} from '../consts';
-
 import styles from './FixedBlogTitle.module.scss';
 
 const SCROLLY_POSITION_TO_VISIBLE = 240;
