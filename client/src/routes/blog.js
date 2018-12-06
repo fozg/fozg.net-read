@@ -11,19 +11,27 @@ export default class RenderBlog extends React.Component {
   // state = {
   //   isBlogLoaded : false
   // }
+  state = {
+    blog: null
+  }
+
+  _onBlogLoaded = blog => {
+    this.setState({blog})
+  }
 
   render () {
     const slug = this.props.match.params.slug;
-    
+    const {blog} = this.state;
+
     return (
       <div>
         <div className="container">
           <div className="row">
             <div className="blogWrap">
-              <BlogContent slug={slug} key={slug} />
+              <BlogContent slug={slug} key={slug} onBlogLoaded={this._onBlogLoaded}/>
             </div>
             <div className={styles.sidebar}>
-              <AuthorBox />
+              <AuthorBox author={blog ? blog.author : null} />
               
               <SideNav />
             </div>

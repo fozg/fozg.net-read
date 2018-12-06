@@ -1,6 +1,8 @@
 import React from 'react'
+import moment from 'moment';
 
 import Avatar from './Avatar';
+import FixedBlogTitle from './FixedBlogTitle';
 
 import {callAPI} from '../lib';
 import {API} from '../consts';
@@ -17,7 +19,8 @@ export default class BlogContent extends React.Component {
       new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
         result => {
           console.log(result) 
-          this.setState({blog: result})
+          this.setState({blog: result});
+          this.props.onBlogLoaded && this.props.onBlogLoaded(result);
         }
       ).catch(e => {
         console.log(e)
@@ -52,8 +55,12 @@ export default class BlogContent extends React.Component {
     
     return (
       <div className={styles.content}>
+        <FixedBlogTitle title={blog.title} author={blog.author} />
         <h1 className={styles.title}>{blog.title}</h1>
-        <Avatar {...blog.author} imageUrl={blog.author.profileImageUrl} size="small" />
+        <div className={styles.authorLine}>
+          <Avatar {...blog.author} size="small" />
+          {blog.created && <div className={styles.created}> • <em className={styles.createdEm}>{moment(blog.created).fromNow()}</em></div>}
+        </div>
         <div id="clientContent">
           {blog &&
             <div dangerouslySetInnerHTML={{__html: blog.body}} />

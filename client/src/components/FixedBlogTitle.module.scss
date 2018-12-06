@@ -1,0 +1,52 @@
+// @keyframes animateHeight {
+//   from {
+//     transform: translateY(-50px);
+//   }
+//   to {
+//     // height: 50px;
+//   }
+// }
+
+.FixedBlogTitle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background: #fff;
+  z-index: 1010;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0px 2px rgba(0,0,0,.1);
+  transform: translateY(-60px);
+  transition: transform .5s;
+}
+
+.show {
+  transform: translateY(0px);
+  
+  transition: transform .2s;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  
+}
+
+.title {
+  margin: 0;
+  color: #555
+}
+
+.logo {
+  width: 60px;
+  margin: 0px 10px 0 0;
+
+}
+
+.by {
+  margin: 0 7px;
+  font-size: .8em;
+  color: #666;
+}
