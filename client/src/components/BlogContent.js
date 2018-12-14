@@ -7,7 +7,7 @@ import FixedBlogTitle from './FixedBlogTitle';
 import {callAPI} from '../lib';
 import {API} from '../consts';
 
-import styles from './BlogContent.module.scss';
+import './BlogContent.zlobal.scss';
 export default class BlogContent extends React.Component {
   state = {
     blog: null
@@ -15,17 +15,24 @@ export default class BlogContent extends React.Component {
 
   componentDidMount () {
     console.log('window.isFirstLoad', window.isFirstLoad)
-    if (!window.isFirstLoad) {
-      new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
-        result => {
-          console.log(result) 
+    
+    new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
+      result => {
+        console.log(result) 
+        if (window.isFirstLoad) {
+          // dont need to reload the body when first load
+          // cause server already render it
+          this.setState({blog: {...result, body: null}});
+        } else {
           this.setState({blog: result});
-          this.props.onBlogLoaded && this.props.onBlogLoaded(result);
         }
-      ).catch(e => {
-        console.log(e)
-      })
-    } else {
+        this.props.onBlogLoaded && this.props.onBlogLoaded(result);
+      }
+    ).catch(e => {
+      console.log(e)
+    })
+
+    if (window.isFirstLoad) {
       window.isFirstLoad = false;
     }
   }
@@ -54,12 +61,12 @@ export default class BlogContent extends React.Component {
     if (!blog) return false;
     
     return (
-      <div className={styles.content}>
+      <div className={"content"}>
         <FixedBlogTitle title={blog.title} author={blog.author} />
-        <h1 className={styles.title}>{blog.title}</h1>
-        <div className={styles.authorLine}>
+        <h1 className={"content-title"}>{blog.title}</h1>
+        <div className={"content-authorLine"}>
           <Avatar {...blog.author} size="small" />
-          {blog.created && <div className={styles.created}> • <em className={styles.createdEm}>{moment(blog.created).fromNow()}</em></div>}
+          {blog.created && <div className={"content-created"}> • <em className={'content-created--em'}>{moment(blog.created).fromNow()}</em></div>}
         </div>
         <div id="clientContent">
           {blog &&

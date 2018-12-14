@@ -12,7 +12,7 @@ app.set('view engine', 'pug')
 // respond with "hello world" when a GET request is made to the homepage
 
 app.use('/static/', express.static('client/build/static'))
-app.use('/public/', express.static('public'))
+app.use('/public/', express.static('client/build'))
 app.use('/', routes);
 app.use('/api', cors(), api);
 

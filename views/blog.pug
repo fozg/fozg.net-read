@@ -2,7 +2,9 @@ extends layout.pug
 block content
   .container()
     .row
-      .blogWrap
-          div#serverContent!= content
-      .sidebar
+      .blogWrap#serverContent
+        h1.content-title= title
+        div.loadingAuthor(style={height: '28px'})
+        div!= content
+      .sidebar  
     
