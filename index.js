@@ -36,5 +36,5 @@ mongoose.connect('mongodb://localhost/fozg-net-blogs', { useNewUrlParser: true }
 //   res.send('test')
 // })
 
-app.listen(3333)
+app.listen(3501)
 
