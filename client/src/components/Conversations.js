@@ -17,8 +17,6 @@ export default class Conversations extends React.Component {
   }
 
   render () {
-    if (!this.state.visible) return false;
-
     return (
       <div className={styles.Conversations}>
         <div className="container">
