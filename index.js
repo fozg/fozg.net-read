@@ -13,10 +13,10 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'pug')
 // respond with "hello world" when a GET request is made to the homepage
 
-app.use('/static/', express.static('client/build/static'))
-app.use('/public/', express.static('client/build'))
+app.use('/blog/static/', express.static(__dirname + '/client/build/static'))
+app.use('/blog/public/', express.static(__dirname + '/client/build'))
 app.use('/', routes);
-app.use('/api', cors(), api);
+app.use('/blog/api', cors(), api);
 
 
 mongoose.connect('mongodb://localhost/fozg-net-blogs', { useNewUrlParser: true });
