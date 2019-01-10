@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd client && yarn build && cd .. && nodemon ./index",
-    "start:prod": "NODE_ENV=production & node index"
+    "start:prod": "NODE_ENV=production node index"
   },
   "author": "",
   "license": "ISC",
