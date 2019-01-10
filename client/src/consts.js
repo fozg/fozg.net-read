@@ -1,7 +1,8 @@
-export const isProduction = process.env.NODE_ENV === 'production';
+export const isProduction = window.location.hostname !== 'localhost'
+// process.env.NODE_ENV === 'production';
 
 export const apiEndpoint = isProduction ? 
-  "http://localhost:3333/api/" : "http://localhost:3333/api/";
+  "https://fozg.net/blog/api/" : "http://localhost:3501/api/";
 
 export const API = {
   /**
