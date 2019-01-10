@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/blog', require('./blog'));
-router.get('/blog/:slug', require('./blog-slug'));
+let hostName = process.env.NODE_ENV === 'production' ? '/' : '/blog'
+
+router.get(hostName, require('./blog'));
+router.get(hostName + '/:slug', require('./blog-slug'));
 
 module.exports = router;
