@@ -61,7 +61,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy": "yarn build & scp -r build/. root@fozg.net:/home/fozg.net-read/client/build/"
   },
   "eslintConfig": {
     "extends": "react-app"
