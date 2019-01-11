@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Blog = mongoose.model('Blog', { 
   name: String,
-  createdBy: mongoose.Schema.Types.ObjectId,
+  createdBy: String,
   title: String,
   descrition: String,
   body: String,

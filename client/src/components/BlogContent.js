@@ -13,12 +13,9 @@ export default class BlogContent extends React.Component {
     blog: null
   }
 
-  componentDidMount () {
-    console.log('window.isFirstLoad', window.isFirstLoad)
-    
+  componentDidMount () {    
     new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
       result => {
-        console.log(result) 
         if (window.isFirstLoad) {
           // dont need to reload the body when first load
           // cause server already render it
@@ -29,7 +26,7 @@ export default class BlogContent extends React.Component {
         this.props.onBlogLoaded && this.props.onBlogLoaded(result);
       }
     ).catch(e => {
-      console.log(e)
+      // console.log(e)
     })
 
     if (window.isFirstLoad) {
@@ -42,10 +39,7 @@ export default class BlogContent extends React.Component {
       blog 
     } = this.state;
 
-    // console.log(' render blog, window.isFirstLoad:', window.isFirstLoad)
     if (window.isFirstLoad && this.props.slug) {      
-      // window.isFirstLoad = false;
-
       if (window.serverContent !== null) {
         return (
           <div className="content">

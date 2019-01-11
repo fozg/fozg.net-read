@@ -2,28 +2,33 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 import styles from './SideNav.module.scss';
-
+import {callAPI} from '../lib';
+import {API} from '../consts';
 export default class SideNav extends React.Component {
   state = {
-    blog: ""
+    blogs: []
   }
 
   componentDidMount () {
-    
+    new callAPI(API.BLOGS_BY_USER + "/" +this.props.author.name, "GET", {username: this.props.author.name}).call().then(
+      blogs => {
+        this.setState({blogs})
+      }
+    )
   }
 
   render () {
     const {
-      match
-    } = this.props;
+      blogs
+    } = this.state;
     
     return (
       <div>
         <h3>Other blogs</h3>
-          <h3>{match && match.params.slug}</h3>
           <ul className={styles.sideNavList}>
-            <li><Link to="/blog/blog1">Blog 1</Link></li>
-            <li><Link to="/blog/javascript">javascript</Link></li>
+            {blogs.map((blog) => (
+              <li key={blog.slug}><Link to={`/blog/${blog.slug}`}>{blog.title}</Link></li>
+            ))}
           </ul>
               
       </div>

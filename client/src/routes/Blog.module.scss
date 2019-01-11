@@ -1,8 +1,21 @@
 .sidebar {
-  width: 280px;
+  width: 300px;
   /* background: #eee; */
   min-height: 200px;
   border-radius: 10px;
   margin-left: 50px;
   margin-top: 20px;
+}
+
+.blogContent {
+  display: flex;
+  flex: 1;
+  line-height: 1.68;
+  font-size: 1.05em;
+  font-weight: 200;
+}
+
+.sticky {
+  position: sticky;
+  top: 80px;
 }

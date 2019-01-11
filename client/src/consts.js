@@ -9,6 +9,10 @@ export const API = {
    * GET blog
    * ?slug=javascript
    */
-  BLOG: apiEndpoint + "v1/blog"
-  
+  BLOG: apiEndpoint + "v1/blog",
+  /**
+   * GET blogs list by user
+   * v1/blogs/:user
+   */
+  BLOGS_BY_USER: apiEndpoint + "v1/blogs"
 }

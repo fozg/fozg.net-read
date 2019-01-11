@@ -14,6 +14,14 @@ module.exports = {
       return {...result._doc, body: marked(result.body)};
     }
   },
+  getBlogsByUser: async (username) => {
+    var result = await blogMo.find({createdBy: username})
+    if (!result) {
+      return []
+    } else {
+      return result.map(blog => ({title: blog.title, slug: blog.slug}))
+    }
+  },
   /**
    * Add blog via md file with prop. File example:
    * 
