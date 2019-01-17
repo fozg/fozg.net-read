@@ -17,7 +17,7 @@ module.exports = {
   getBlogsByUser: async (username) => {
     var result = await blogMo.find({
       createdBy: username,
-      isPublish: true
+      published: true
     })
     if (!result) {
       return []

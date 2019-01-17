@@ -11,7 +11,8 @@ const Blog = mongoose.model('Blog', {
   updated: Date,
   published: Boolean,
   slug: String,
-  format: String, // md || draft
+  format: String, // md || draft,
+  lang: String
 });
 
 module.exports = Blog;
