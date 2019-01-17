@@ -8,7 +8,8 @@
     "start": "cd client && yarn build && cd .. && nodemon ./index",
     "start:fast": "nodemon ./index",
     "start:prod": "NODE_ENV=production node index",
-    "deploy": "git pull & pm2 restart read"
+    "server:deploy": "git pull & pm2 restart read",
+    "deploy": "ssh root@fozg.net/home/fozg.net-read/ npm run server:deploy"
   },
   "author": "",
   "license": "ISC",

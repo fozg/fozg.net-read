@@ -4,7 +4,7 @@ const Blog = mongoose.model('Blog', {
   name: String,
   createdBy: String,
   title: String,
-  descrition: String,
+  description: String,
   body: String,
   tags: String,
   created: Date,
