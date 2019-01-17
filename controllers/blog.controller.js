@@ -27,7 +27,8 @@ module.exports = {
         slug: blog.slug,
         public_url: `https://fozg.net/blog/`+ blog.slug,
         created: blog.created,
-        lang: blog.lang
+        lang: blog.lang,
+        description: blog.description
       }))
     }
   },
