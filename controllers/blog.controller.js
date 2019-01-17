@@ -15,11 +15,20 @@ module.exports = {
     }
   },
   getBlogsByUser: async (username) => {
-    var result = await blogMo.find({createdBy: username})
+    var result = await blogMo.find({
+      createdBy: username,
+      isPublish: true
+    })
     if (!result) {
       return []
     } else {
-      return result.map(blog => ({title: blog.title, slug: blog.slug}))
+      return result.map(blog => ({
+        title: blog.title, 
+        slug: blog.slug,
+        public_url: `https://fozg.net/blog/`+ blog.slug,
+        created: blog.created,
+        lang: blog.lang
+      }))
     }
   },
   /**

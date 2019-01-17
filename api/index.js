@@ -8,7 +8,7 @@ router.get('/',  function(req, res, next) {
 
 router.get('/v1/blog/', require('./v1/blog~slug'))
 router.get('/v1/blog/:slug', require('./v1/blog~slug'))
-router.get('/v1/blogs/:username', require('./v1/blogs_user'))
+router.get('/v1/blogs', require('./v1/blogs_user'))
 
 
 module.exports = router;
