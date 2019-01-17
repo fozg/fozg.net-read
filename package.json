@@ -9,7 +9,7 @@
     "start:fast": "nodemon ./index",
     "start:prod": "NODE_ENV=production node index",
     "server:deploy": "git pull & pm2 restart read",
-    "deploy": "ssh root@fozg.net/home/fozg.net-read/ npm run server:deploy"
+    "deploy": "ssh root@fozg.net cd /home/fozg.net-read; npm run server:deploy"
   },
   "author": "",
   "license": "ISC",
