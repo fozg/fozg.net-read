@@ -10,7 +10,7 @@ export default class SideNav extends React.Component {
   }
 
   componentDidMount () {
-    new callAPI(API.BLOGS_BY_USER + "/" +this.props.author.name, "GET", {username: this.props.author.name}).call().then(
+    new callAPI(API.BLOGS_BY_USER , "GET", {username: this.props.author.name}).call().then(
       blogs => {
         this.setState({blogs})
       }

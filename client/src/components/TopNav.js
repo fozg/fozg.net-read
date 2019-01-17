@@ -9,7 +9,16 @@ export default class TopNav extends React.Component {
     return (
       <div className={styles.topnav}>
         <div className="container">
-          <img src={isProduction ? "/blog/public/f-read-box.png": "/public/f-read-box.png"} className={styles.logo} alt="f/Read"></img>
+          <div className={styles.navItems}>
+            <a href="/" className={styles.navItems}>
+              <img src="https://fozg.net/static/images/logo.png" height="45"/>
+            </a>
+            <div className={styles.andChar}> & </div>
+            <a href="#" className={styles.navItems}>
+              <img src={isProduction ? "/blog/public/f-read-box.png": "/f-read-box.png"} className={styles.logo} alt="f/Read"></img>
+              f/Read
+            </a>
+          </div>
         </div>
       </div>
     )

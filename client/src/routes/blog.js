@@ -38,7 +38,7 @@ export default class RenderBlog extends React.Component {
             </div>
           </div>
         </div>
-        {blog && <Conversations></Conversations>}
+        {/* {blog && <Conversations></Conversations>} */}
       </div>
     )
   }

@@ -26,9 +26,5 @@ export default ({
       }
     </div>
     {size === 'large' && <pre className={styles.title}>{title}</pre>}
-    {size === 'large' && <div className={styles.joined}>
-      Joined: {moment(joined).format('MMM DD YYYY')}
-    </div>}
-    
   </div>
 )
