@@ -27,10 +27,10 @@ export default class RenderBlog extends React.Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className={styles.blogContent}>
+            <div className={styles.blogContent+ " col-12 col-lg"}>
               <BlogContent slug={slug} key={slug} onBlogLoaded={this._onBlogLoaded}/>
             </div>
-            <div className={styles.sidebar}>
+            <div className={styles.sidebar + ""}>
               <div className={styles.sticky}>
                 <AuthorBox author={blog ? blog.author : null} />
                 {blog && <SideNav author={blog.author} />}

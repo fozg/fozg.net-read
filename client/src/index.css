@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'PT Serif', serif;
+  font-family: 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,15 +15,13 @@ code {
 }
 
 .container {
-  width: 1100px;
-  margin: auto;
+  max-width: 1020px !important;
 }
 
 .row {
   display: flex;
   justify-content: center;
 }
-
 
 #navigation {
   position: fixed;

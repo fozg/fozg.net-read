@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import TopNav from './components/TopNav';
 
 import Blog from './routes/Blog';
+import './scss/bootstrap.scss';
 
 class App extends Component {
   render() {
