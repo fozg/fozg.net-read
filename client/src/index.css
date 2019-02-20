@@ -79,6 +79,7 @@ pre {
   width: 100%;
   overflow-x: auto;
   font-size: 14px;
+  max-width: 640px;
 }
 blockquote {
   border-left: 5px solid #5da0a1;
