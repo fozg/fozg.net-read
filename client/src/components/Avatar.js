@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import moment from 'moment';
 
 import styles from './Avatar.module.scss';
 
