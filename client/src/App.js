@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TopNav from './components/TopNav';
 
-import Blog from './routes/Blog';
+import Blog from './routes/blog';
 import './scss/bootstrap.scss';
 
 class App extends Component {
