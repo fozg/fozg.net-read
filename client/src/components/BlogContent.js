@@ -24,6 +24,9 @@ export default class BlogContent extends React.Component {
           this.setState({blog: result});
         }
         this.props.onBlogLoaded && this.props.onBlogLoaded(result);
+        if (result.title) {
+          document.title=result.title;
+        }
       }
     ).catch(e => {
       // console.log(e)
