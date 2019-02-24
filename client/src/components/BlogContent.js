@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment';
+import BlogLoader from './BlogLoader';
 
 import Avatar from './Avatar';
 import FixedBlogTitle from './FixedBlogTitle';
@@ -11,18 +12,27 @@ import {API} from '../consts';
 import './BlogContent.zlobal.scss';
 export default class BlogContent extends React.Component {
   state = {
-    blog: null
+    blog: null,
+    isLoading: true
   }
 
-  componentDidMount () {    
+  componentDidMount () {
+    setTimeout(() => {
+      // make sure delay 500ms everytime when load new blog
+      if (this.state.blog) {
+        this.setState({isLoading: false})
+      } else {
+        this.loaded500 = true
+      }
+    }, 500);
     new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
       result => {
         if (window.isFirstLoad) {
           // dont need to reload the body when first load
           // cause server already render it
-          this.setState({blog: {...result, body: null}});
+          this.setState({blog: {...result, body: null, isLoading: !this.loaded500}});
         } else {
-          this.setState({blog: result});
+          this.setState({blog: result, isLoading: !this.loaded500});
         }
         this.props.onBlogLoaded && this.props.onBlogLoaded(result);
         if (result.title) {
@@ -40,7 +50,8 @@ export default class BlogContent extends React.Component {
 
   render () {
     const {
-      blog 
+      blog,
+      isLoading
     } = this.state;
 
     if (window.isFirstLoad && this.props.slug) {      
@@ -56,6 +67,9 @@ export default class BlogContent extends React.Component {
       }      
     }
 
+    if (isLoading) {
+      return <BlogLoader />
+    }
     if (!blog) return false;
     
     return (

@@ -26,7 +26,7 @@ export default class RenderBlog extends React.Component {
     return (
       <div>
         <div className="container">
-          <div className="row">
+          <div className="row" style={{marginTop: 20}}>
             <div className={styles.blogContent+ " col-12 col-lg"}>
               <BlogContent slug={slug} key={slug} onBlogLoaded={this._onBlogLoaded}/>
             </div>
