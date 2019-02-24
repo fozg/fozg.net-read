@@ -17,14 +17,18 @@ export default class BlogContent extends React.Component {
   }
 
   componentDidMount () {
-    setTimeout(() => {
-      // make sure delay 500ms everytime when load new blog
-      if (this.state.blog) {
-        this.setState({isLoading: false})
-      } else {
-        this.loaded500 = true
-      }
-    }, 500);
+    if (!window.isFirstLoad) {
+      setTimeout(() => {
+        // make sure delay 500ms everytime when load new blog
+        if (this.state.blog) {
+          this.setState({isLoading: false})
+        } else {
+          this.loaded500 = true
+        }
+      }, 500);
+    } else {
+      this.loaded500 = true
+    }
     new callAPI(API.BLOG, "GET", {slug: this.props.slug}).call().then(
       result => {
         if (window.isFirstLoad) {
@@ -54,6 +58,10 @@ export default class BlogContent extends React.Component {
       isLoading
     } = this.state;
 
+    if (isLoading) {
+      return <BlogLoader />
+    }
+    
     if (window.isFirstLoad && this.props.slug) {      
       if (window.serverContent !== null) {
         return (
@@ -67,9 +75,7 @@ export default class BlogContent extends React.Component {
       }      
     }
 
-    if (isLoading) {
-      return <BlogLoader />
-    }
+  
     if (!blog) return false;
     
     return (
