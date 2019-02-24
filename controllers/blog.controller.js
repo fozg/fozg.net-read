@@ -43,7 +43,7 @@ module.exports = {
         created: blog.created,
         lang: blog.lang,
         description: blog.description,
-        tags: blog.tags
+        tags: blog.tags ? blog.tags.trim().split(";").map(o => o.trim()) : null
       }))
     }
   },
