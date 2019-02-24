@@ -27,7 +27,12 @@ export default class SideNav extends React.Component {
         <h3>Other blogs</h3>
           <ul className={styles.sideNavList}>
             {blogs.map((blog) => (
-              <li key={blog.slug}><Link to={`/blog/${blog.slug}`}>{blog.title}</Link></li>
+              <li key={blog.slug}>
+                <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
+                <div style={{fontWeight: 600}}>{blog.tags && blog.tags.trim().split(";").map(blog => (
+                  `#${blog} `
+                ))}</div>
+              </li>
             ))}
           </ul>
               

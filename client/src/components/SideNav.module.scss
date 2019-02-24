@@ -1,4 +1,11 @@
 .sideNavList {
   margin: 0;
   padding: 0 0 0 20px;
+  li {
+    content: "\2022";
+    color: #009688;
+    a {
+      color: #000;
+    }
+  }
 }

@@ -42,7 +42,8 @@ module.exports = {
         public_url: `https://fozg.net/blog/`+ blog.slug,
         created: blog.created,
         lang: blog.lang,
-        description: blog.description
+        description: blog.description,
+        tags: blog.tags
       }))
     }
   },

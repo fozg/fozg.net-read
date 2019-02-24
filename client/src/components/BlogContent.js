@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import Avatar from './Avatar';
 import FixedBlogTitle from './FixedBlogTitle';
+import Tags from './Tags';
 
 import {callAPI} from '../lib';
 import {API} from '../consts';
@@ -65,6 +66,10 @@ export default class BlogContent extends React.Component {
           <Avatar {...blog.author} size="small" />
           {blog.created && <div className={"content-created"}> • <em className={'content-created--em'}>{moment(blog.created).fromNow()}</em></div>}
         </div>
+        {blog.tags && <>
+          <div style={{height: 10}} />
+          <Tags tags={blog.tags} />
+        </>}
         <div id="clientContent">
           {blog &&
             <div dangerouslySetInnerHTML={{__html: blog.body}} />
