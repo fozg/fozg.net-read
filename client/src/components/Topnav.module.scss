@@ -1,12 +1,9 @@
 .topnav {
-  top: 0;
-  left: 0;
-  right: 0;
   align-items: center;
   background-color: hsla(0,0%,100%,.98);
-  background-color: #f3f3f3;
+  background-color: #eaf6f7;
   font-weight: 600;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #abcfd0;
 }
 
 .topnav--fix {
@@ -16,7 +13,7 @@
 .logo {
   width: 45px;
   height: 45px;
-  }
+}
 
 .navItems {
   display: flex;
@@ -28,6 +25,7 @@
 }
 
 .andChar  {
-  color: #ccc;
+  color: #009688;
+  // color: #ccc;
   margin: 0 5px;
 }

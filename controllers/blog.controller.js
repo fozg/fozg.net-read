@@ -1,6 +1,7 @@
 var blogMo = require('../models/blog.model');
 var marked = require('marked');
-var MarkdownMetadataParser = require('../utils/markdown_metadata_parser')
+var MarkdownMetadataParser = require('../utils/markdown_metadata_parser');
+var getTagColor = require('../utils/get_tag_color');
 
 module.exports = {
   /**
@@ -25,7 +26,11 @@ module.exports = {
         smartypants: false,
         xhtml: false
       });
-      return {...result._doc, body: marked(result.body)};
+      return {
+        ...result._doc, 
+        body: marked(result.body), 
+        tags: result.tags ? result.tags.trim().split(";").map(o => getTagColor(o.trim())) : null
+      };
     }
   },
   getBlogsByUser: async (username) => {
@@ -43,7 +48,7 @@ module.exports = {
         created: blog.created,
         lang: blog.lang,
         description: blog.description,
-        tags: blog.tags ? blog.tags.trim().split(";").map(o => o.trim()) : null
+        tags: blog.tags ? blog.tags.trim().split(";").map(o => getTagColor(o.trim())) : null
       }))
     }
   },

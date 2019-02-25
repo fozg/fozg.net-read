@@ -1,22 +1,22 @@
 import React from "react";
 
 export default ({ tags }) => {
-  if (tags && tags.trim() !== "") {
+  if (tags) {
     return (
       <div>
-        {tags.split(";").map((tag, idx) => (
+        {tags.map((tag) => (
           <span
-            key={tag}
+            key={tag.tagName}
             style={{
               background: "#eee",
               padding: "1px 8px",
               borderRadius: 5,
               marginRight: 5,
-              backgroundColor: "rgb(93, 160, 161)",
-              color: "#fff"
+              backgroundColor: tag.bgColor,
+              color: tag.color
             }}
           >
-            #{tag}
+            #{tag.tagName}
           </span>
         ))}
       </div>
