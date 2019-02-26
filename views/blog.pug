@@ -1,4 +1,12 @@
 extends layout.pug
+block head
+  title=title + " - Fozg.net Blog"
+  description=description
+  meta(property="og:site_name", content="Blog on Fozg.net")
+  meta(property="og:type", content="blog")
+  meta(property="og:url", content="https://fozg.net/blog/" + slug)
+  meta(property="og:title", content=title)
+  meta(property="og:description", content=description)
 block content
   .container()
     .row

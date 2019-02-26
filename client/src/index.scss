@@ -99,11 +99,13 @@ pre code {
   }
   ol {
     list-style: none;
-    counter-reset: the-fox-couter;
+    counter-reset: li;
     li {
-      counter-increment: the-fox-couter;
+      counter-increment: li;
+      margin-top: .25em;
       &::before {
-        content: counter(the-fox-couter) ". ";
+        content: counter(li) ". ";
+        counter-increment: li;
         color: darkgray;
         font-weight: 600;
         font-weight: bold;
