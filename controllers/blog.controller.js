@@ -37,7 +37,7 @@ module.exports = {
     var result = await blogMo.find({
       createdBy: username,
       published: true
-    }).sort("created")
+    }).sort([["created", -1]])
     if (!result) {
       return []
     } else {
