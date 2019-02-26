@@ -100,8 +100,8 @@ pre code {
   ol {
     list-style: none;
     counter-reset: li;
-    li {
-      counter-increment: li;
+    &>li {
+      // counter-increment: li;
       margin-top: .25em;
       &::before {
         content: counter(li) ". ";
