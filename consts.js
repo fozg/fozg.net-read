@@ -21,11 +21,15 @@ module.exports = {
       color: "#eee"
     },
     tomatoworks: {
-      bgColor: "rgb(220, 88, 88)",
+      bgColor: "#3F51B5",
       color: "#fff"
     },
     messnote: {
       bgColor: "rgb(65, 83, 184)",
+      color: "#fff"
+    },
+    changelog: {
+      bgColor: "#000",
       color: "#fff"
     }
   }
