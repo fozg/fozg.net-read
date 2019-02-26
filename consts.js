@@ -13,7 +13,7 @@ module.exports = {
       color: '#fff'
     },
     todayilearned: {
-      bgColor: "##33a8ff",
+      bgColor: "#33a8ff",
       color: "#fff"
     },
     github: {
@@ -21,7 +21,7 @@ module.exports = {
       color: "#eee"
     },
     tomatoworks: {
-      bgColor: "#3F51B5",
+      bgColor: "rgb(220, 88, 88)",
       color: "#fff"
     },
     messnote: {
