@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 import styles from './Topnav.module.scss';
 
 import {isProduction} from '../consts';
@@ -14,10 +14,13 @@ export default class TopNav extends React.Component {
               <img src="https://fozg.net/static/images/logo.png" height="45" alt="Fozg Blog" />
             </a>
             <div className={styles.andChar}> & </div>
-            <a href="#" className={styles.navItems}>
-              <img src={isProduction ? "/blog/public/f-read-box.png": "/f-read-box.png"} className={styles.logo} alt="f/Read"></img>
-              <span>f/Read</span>
-            </a>
+            <Link to="/blog"className={styles.navItems}>
+              <img 
+                src={isProduction ? "/blog/public/f-read-box.png": "/f-read-box.png"}
+                className={styles.logo} alt="f/Read"
+              ></img>
+              <span>f/Blog</span>
+            </Link> 
           </div>
         </div>
       </div>

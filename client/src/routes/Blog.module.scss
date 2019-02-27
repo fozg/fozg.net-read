@@ -1,17 +1,30 @@
-.sidebar {
-  width: 300px;
-  /* background: #eee; */
-  min-height: 200px;
-  border-radius: 10px;
-  margin-left: 50px;
-  // margin-top: 20px;
+.blogItem {
+  margin: 30px 0 ;
 }
 
-.blogContent {
-  line-height: 1.5;
+.blogTitle {
+  padding: 0;
+  margin: 0px 0 0px;
+  color: #000;
+  font-weight: 800;
 }
 
-.sticky {
-  position: sticky;
-  top: 60px;
+.time {
+  color: #ccc;
+  font-weight: 600;
+}
+
+.blogDescription {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.tagsWrap  {
+  margin-top: 10px;
+}
+
+.tagItem {
+  padding: 2px 10px;
+  border-radius: 15px;
+  margin-right: 5px;
 }

@@ -1,0 +1,17 @@
+.sidebar {
+  width: 300px;
+  /* background: #eee; */
+  min-height: 200px;
+  border-radius: 10px;
+  margin-left: 50px;
+  // margin-top: 20px;
+}
+
+.blogContent {
+  line-height: 1.5;
+}
+
+.sticky {
+  position: sticky;
+  top: 60px;
+}
