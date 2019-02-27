@@ -11,12 +11,12 @@ export default class TopNav extends React.Component {
         <div className="container">
           <div className={styles.navItems}>
             <a href="/" className={styles.navItems}>
-              <img src="https://fozg.net/static/images/logo.png" height="45"/>
+              <img src="https://fozg.net/static/images/logo.png" height="45" alt="Fozg Blog" />
             </a>
             <div className={styles.andChar}> & </div>
             <a href="#" className={styles.navItems}>
               <img src={isProduction ? "/blog/public/f-read-box.png": "/f-read-box.png"} className={styles.logo} alt="f/Read"></img>
-              f/Read
+              <span>f/Read</span>
             </a>
           </div>
         </div>

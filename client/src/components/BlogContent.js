@@ -56,8 +56,7 @@ export default class BlogContent extends React.Component {
   }
 
   logGA = () => {
-    console.log('ga')
-    if (!window.GA_INITIALIZED) {
+    if (process.env.NODE_ENV !== 'development' && !window.GA_INITIALIZED) {
       initGA()
       window.GA_INITIALIZED = true
     }
