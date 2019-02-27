@@ -1,12 +1,12 @@
-extends layout.pug
+extends layout
 block head
   title=title + " - Fozg.net Blog"
-  description=description
   meta(property="og:site_name", content="Blog on Fozg.net")
   meta(property="og:type", content="blog")
   meta(property="og:url", content="https://fozg.net/blog/" + slug)
   meta(property="og:title", content=title)
   meta(property="og:description", content=description)
+  meta(property="og:updated_time", content=created)
 block content
   .container()
     .row
@@ -15,4 +15,6 @@ block content
         div.loadingAuthor(style={height: '28px'})
         div!= content
       .sidebar  
-    
+
+
+  

@@ -18,7 +18,8 @@ function blog (req, res, next) {
         author: blog.author, 
         description: blog.description,
         tags: blog.tags,
-        slug: blog.slug
+        slug: blog.slug,
+        created: new Date(blog.created).getTime()
       })
     } else {
       res.status(404).send('Not found')

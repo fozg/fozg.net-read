@@ -1,4 +1,4 @@
-
+doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
@@ -9,6 +9,9 @@ html(lang="en")
     link(rel="stylesheet", href="/blog/static/css/main.chunk.css")
     link(rel="shortcut icon" href="/blog/public/f-read-box.png")
     block head
+      title Fozg Blog
+      meta(property="og:image", content="/blog/public/f-read-box.png")
+
   body
     #root
       block content
