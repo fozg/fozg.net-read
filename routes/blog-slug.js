@@ -12,7 +12,7 @@ function blog (req, res, next) {
   blogController.getBlogHTMLBySlug(slug).then(blog => {
     // console.log({blog})
     if (blog) {
-      res.render('blog', {
+      res.render('blogdetail', {
         content: blog.body, 
         title: blog.title, 
         author: blog.author, 

@@ -1,6 +1,6 @@
 
 function blog (req, res, next) {
-  res.send('Blog on Fozg.net')
+  res.render('blog')
 }
 
 module.exports = blog;

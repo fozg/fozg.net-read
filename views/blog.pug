@@ -1,22 +1,16 @@
 extends layout
 block head
-  title=title + " - Fozg.net Blog"
+  title=Fozg Blog
   meta(property="og:site_name", content="Blog on Fozg.net")
   meta(property="og:type", content="blog")
   meta(property="og:url", content="https://fozg.net/blog/" + slug)
-  meta(property="og:title", content=title)
-  meta(property="og:description", content=description)
-  meta(property="og:updated_time", content=created)
+  meta(property="og:title", content="Blog on Fozg.net")
+  meta(property="og:description", content="Blog on Fozg.net")
+  meta(property="og:updated_time", content="1551285168509")
   meta(property="og:image", content="/blog/public/f-read-box.png")
 
 block content
-  .container()
-    .row
-      .blogWrap#serverContent(style={display: 'none'})
-        h1.content-title= title
-        div.loadingAuthor(style={height: '28px'})
-        div!= content
-      .sidebar  
+  
 
 
   
