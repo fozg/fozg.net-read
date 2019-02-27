@@ -8,6 +8,7 @@ import Tags from './Tags';
 
 import {callAPI} from '../lib';
 import {API} from '../consts';
+import {initGA, logPageView} from '../utils/ga';
 
 import './BlogContent.zlobal.scss';
 export default class BlogContent extends React.Component {
@@ -50,6 +51,17 @@ export default class BlogContent extends React.Component {
     if (window.isFirstLoad) {
       window.isFirstLoad = false;
     }
+
+    this.logGA();
+  }
+
+  logGA = () => {
+    console.log('ga')
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
   }
 
   render () {

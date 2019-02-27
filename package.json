@@ -22,8 +22,6 @@
     "marked": "^0.5.2",
     "mongoose": "^5.3.13",
     "pug": "^2.0.3",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
     "yaml-front-matter": "^4.0.0"
   }
 }
