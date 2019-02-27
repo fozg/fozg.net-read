@@ -6,14 +6,16 @@ import Blog from "./routes/Blog";
 import BlogDetail from "./routes/BlogDetail";
 import "./scss/bootstrap.scss";
 
+import withTracker from './withTracker';
+
 class App extends Component {
   render() {
     return (
-      <Router className="App">
+      <Router className="App" >
         <>
           <TopNav />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/blog/:slug" component={BlogDetail} />
+          <Route path="/blog" exact component={withTracker(Blog)} />
+          <Route path="/blog/:slug" component={withTracker(BlogDetail)} />
         </>
       </Router>
     );

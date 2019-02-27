@@ -8,7 +8,7 @@ import Tags from './Tags';
 
 import {callAPI} from '../lib';
 import {API} from '../consts';
-import {initGA, logPageView} from '../utils/ga';
+// import {initGA, logPageView} from '../utils/ga';
 
 import './BlogContent.zlobal.scss';
 export default class BlogContent extends React.Component {
@@ -26,7 +26,7 @@ export default class BlogContent extends React.Component {
         } else {
           this.loaded500 = true
         }
-      }, 500);
+      }, 100);
     } else {
       this.loaded500 = true
     }
@@ -52,16 +52,16 @@ export default class BlogContent extends React.Component {
       window.isFirstLoad = false;
     }
 
-    this.logGA();
+    // this.logGA();
   }
 
-  logGA = () => {
-    if (process.env.NODE_ENV !== 'development' && !window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
-  }
+  // logGA = () => {
+  //   if (process.env.NODE_ENV !== 'development' && !window.GA_INITIALIZED) {
+  //     initGA()
+  //     window.GA_INITIALIZED = true
+  //   }
+  //   logPageView()
+  // }
 
   render () {
     const {
