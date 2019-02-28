@@ -221,3 +221,11 @@ hue-6-2: #e6c07b
 .hljs-link {
   text-decoration: underline;
 }
+
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+  box-sizing: border-box;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import TopNav from "./components/TopNav";
 
 import Blog from "./routes/Blog";
@@ -18,6 +18,7 @@ class App extends Component {
           <Route path="/blog" exact component={withTracker(Blog)} />
           <Route path="/blog/:slug" exact component={withTracker(BlogDetail)} />
           <Route path="/blog/t/:tagName" exact component={withTracker(Tag)} />
+          <Route path="/blog/t" exact component={() => <Redirect to="/blog" />} />
         </>
       </Router>
     );
