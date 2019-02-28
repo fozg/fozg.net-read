@@ -26,7 +26,7 @@ export default class BlogContent extends React.Component {
         } else {
           this.loaded500 = true
         }
-      }, 100);
+      }, 300);
     } else {
       this.loaded500 = true
     }

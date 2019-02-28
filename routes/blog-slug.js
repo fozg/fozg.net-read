@@ -19,7 +19,8 @@ function blog (req, res, next) {
         description: blog.description,
         tags: blog.tags,
         slug: blog.slug,
-        created: new Date(blog.created).getTime()
+        created: new Date(blog.created).getTime(),
+        cover: blog.cover
       })
     } else {
       res.status(404).send('Not found')

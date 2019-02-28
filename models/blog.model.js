@@ -12,7 +12,8 @@ const Blog = mongoose.model('Blog', {
   published: Boolean,
   slug: String,
   format: String, // md || draft,
-  lang: String
+  lang: String,
+  cover: String
 });
 
 module.exports = Blog;
