@@ -19,6 +19,10 @@
   box-shadow: 0 0px 2px rgba(0,0,0,.1);
   transform: translateY(-60px);
   transition: transform .5s;
+  display: none;
+  @media screen and (min-width: 992px) {
+    display: block;
+  }
 }
 
 .show {
@@ -36,7 +40,8 @@
 
 .title {
   margin: 0;
-  color: #555
+  color: #555;
+  font-size: 1.1em;
 }
 
 .logo {

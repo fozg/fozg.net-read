@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import TopNav from "./components/TopNav";
 
 import Blog from "./routes/Blog";
+import Tag from "./routes/Tag";
 import BlogDetail from "./routes/BlogDetail";
 import "./scss/bootstrap.scss";
 
@@ -15,7 +16,8 @@ class App extends Component {
         <>
           <TopNav />
           <Route path="/blog" exact component={withTracker(Blog)} />
-          <Route path="/blog/:slug" component={withTracker(BlogDetail)} />
+          <Route path="/blog/:slug" exact component={withTracker(BlogDetail)} />
+          <Route path="/blog/t/:tagName" exact component={withTracker(Tag)} />
         </>
       </Router>
     );

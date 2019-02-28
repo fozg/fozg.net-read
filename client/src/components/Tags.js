@@ -1,11 +1,13 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 export default ({ tags }) => {
   if (tags) {
     return (
       <div>
         {tags.map((tag) => (
-          <span
+          <Link
+            to={`/blog/t/${tag.tagName}`}
             key={tag.tagName}
             style={{
               background: "#eee",
@@ -17,7 +19,7 @@ export default ({ tags }) => {
             }}
           >
             #{tag.tagName}
-          </span>
+          </Link>
         ))}
       </div>
     );

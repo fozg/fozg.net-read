@@ -23,8 +23,6 @@ export default class BlogDetail extends React.Component {
     return (
       <>
         {blog && blog.cover && <CoverImage url={blog.cover} />}
-          
-        
         <div className="container">
           <div className="row" style={{ marginTop: 20 }}>
             <div className={styles.blogContent + " col-12 col-lg"}>
