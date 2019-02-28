@@ -5,7 +5,13 @@ import React from 'react';
 import GoogleAnalytics from 'react-ga';
 
 GoogleAnalytics.initialize('UA-131750478-1');
-
+const scrollToTop = () => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+};
 const withTracker = (WrappedComponent, options = {}) => {
   if (process.env.NODE_ENV == 'development') {
     return WrappedComponent
@@ -23,6 +29,7 @@ const withTracker = (WrappedComponent, options = {}) => {
     componentDidMount() {
       const page = this.props.location.pathname;
       trackPage(page);
+      scrollToTop();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -31,6 +38,7 @@ const withTracker = (WrappedComponent, options = {}) => {
 
       if (currentPage !== nextPage) {
         trackPage(nextPage);
+        scrollToTop();
       }
     }
 
@@ -41,5 +49,6 @@ const withTracker = (WrappedComponent, options = {}) => {
 
   return HOC;
 };
+
 
 export default withTracker;
