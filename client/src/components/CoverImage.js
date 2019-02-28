@@ -31,7 +31,7 @@ export default class CoverImage extends React.Component {
     setTimeout(() => {
       
       if (this.imageHeight > window.innerHeight) {
-        this.setState({height: window.innerHeight - 300,  opacity: 1})
+        this.setState({height: window.innerHeight - 200,  opacity: 1})
       } else {
         this.setState({height: this.imageHeight, opacity: 1})
       }

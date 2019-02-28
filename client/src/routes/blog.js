@@ -36,8 +36,8 @@ export default class Blog extends React.Component {
             <span className={styles.blogDescription}>{blog.description}</span>
             <div className={styles.tagsWrap}>
               {blog.tags && blog.tags.map(tag => (
-                <a 
-                  href="#" 
+                <Link
+                  to={`/blog/t/${tag.tagName}`}
                   key={tag.tagName}
                   style={{backgroundColor: tag.bgColor, color: tag.color}}
                   className={styles.tagItem}
@@ -45,7 +45,7 @@ export default class Blog extends React.Component {
                   <span>
                     {`#${tag.tagName} `}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

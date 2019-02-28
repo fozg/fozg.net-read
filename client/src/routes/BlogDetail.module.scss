@@ -1,10 +1,15 @@
 .sidebar {
-  width: 300px;
   /* background: #eee; */
   min-height: 200px;
   border-radius: 10px;
-  margin-left: 50px;
   // margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+  @media screen and (min-width: 992px){
+    width: 300px;
+    padding: 0;
+    margin-left: 50px;
+  }
 }
 
 .blogContent {
