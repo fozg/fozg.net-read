@@ -6,7 +6,9 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     
     //- title Fozg.net Blog
-    link(rel="stylesheet", href="/blog/static/css/main.chunk.css")
+    //- link(rel="stylesheet", href="/blog/static/css/main.chunk.css")
+    <link rel="stylesheet" href="/blog/static/css/main.chunk.css" media="none" onload="if(media!='all')media='all'"><noscript>
+    <link rel="stylesheet" href="main.chunk.css"></noscript>
     link(rel="shortcut icon" href="/blog/public/f-read-box.png")
     block head
       title Fozg Blog
@@ -100,5 +102,5 @@ html(lang="en")
         var s = n;
         a();
       })([]);
-    script(src="/blog/static/js/1.chunk.js")
-    script(src="/blog/static/js/main.chunk.js")
+    script(src="/blog/static/js/1.chunk.js", async)
+    script(src="/blog/static/js/main.chunk.js", async)
