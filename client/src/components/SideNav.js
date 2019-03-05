@@ -12,7 +12,7 @@ export default class SideNav extends React.Component {
   componentDidMount () {
     new callAPI(API.BLOGS_BY_USER , "GET", {username: this.props.author.name}).call().then(
       blogs => {
-        this.setState({blogs})
+        this.setState({blogs: blogs.slice(0, 5)})
       }
     )
   }
@@ -28,14 +28,15 @@ export default class SideNav extends React.Component {
           <ul className={styles.sideNavList}>
             {blogs.map((blog) => (
               <li key={blog.slug}>
-                <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
-                <div style={{fontWeight: 600}}>{blog.tags && blog.tags.map(tag => (
-                  <Link to={"/blog/t/"+tag.tagName} key={tag.tagName}><span
-                    className={styles.tagItem}
-                  >
-                    {`#${tag.tagName} `}
-                  </span></Link>
-                ))}</div>
+                <Link to={`/blog/${blog.slug}`} className={styles.linkWrap}>
+                  <strong>{blog.title}</strong>
+                  <div style={{fontWeight: 600}}>{blog.tags && blog.tags.map(tag => (
+                    <span to={"/blog/t/"+tag.tagName} key={tag.tagName} className={styles.tagItem}>
+                      {`#${tag.tagName} `}
+                    </span>
+                  ))}
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
