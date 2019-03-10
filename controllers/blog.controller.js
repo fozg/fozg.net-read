@@ -1,3 +1,5 @@
+var prismjs = require('prismjs');
+
 var blogMo = require('../models/blog.model');
 var marked = require('marked');
 var MarkdownMetadataParser = require('../utils/markdown_metadata_parser');
@@ -14,8 +16,11 @@ module.exports = {
     } else {
       marked.setOptions({
         renderer: new marked.Renderer(),
-        highlight: function(code) {
-          return require('highlight.js').highlightAuto(code).value;
+        highlight: function(code, lang) {
+          const language = prismjs.languages[lang] || 'marked';
+          return (prismjs.highlight(code, language))
+          // return prismjs.highlight(code, lang)
+          // return require('highlight.js').highlightAuto(code).value;
         },
         pedantic: false,
         gfm: true,
