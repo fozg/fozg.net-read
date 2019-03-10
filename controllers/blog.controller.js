@@ -1,4 +1,5 @@
 var prismjs = require('prismjs');
+require('../utils/hightlight_bash')(prismjs);
 
 var blogMo = require('../models/blog.model');
 var marked = require('marked');
@@ -17,8 +18,13 @@ module.exports = {
       marked.setOptions({
         renderer: new marked.Renderer(),
         highlight: function(code, lang) {
-          const language = prismjs.languages[lang] || 'marked';
-          return (prismjs.highlight(code, language))
+          try {
+            var language = Object.keys(prismjs.languages).indexOf(lang) > -1 
+              ? prismjs.languages[lang] : prismjs.languages['markup']
+              return (prismjs.highlight(code, language))
+          } catch (e) {
+            return 'Something went wrong.'
+          }
           // return prismjs.highlight(code, lang)
           // return require('highlight.js').highlightAuto(code).value;
         },
