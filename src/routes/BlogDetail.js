@@ -3,7 +3,7 @@ import React from "react";
 import SideNav from "../components/SideNav";
 import BlogContent from "../components/BlogContent";
 import AuthorBox from "../components/AuthorBox";
-import CoverImage from '../components/CoverImage';
+import CoverImage from "../components/CoverImage";
 // import Conversations from '../components/Conversations';
 
 import styles from "./BlogDetail.module.scss";
@@ -20,8 +20,10 @@ export default class BlogDetail extends React.Component {
   render() {
     const slug = this.props.match.params.slug;
     const { blog } = this.state;
+    console.log("render on client", this.props);
     return (
       <>
+        {JSON.stringify(this.props)}
         {blog && blog.cover && <CoverImage url={blog.cover} />}
         <div className="container">
           <div className="row" style={{ marginTop: 20 }}>
@@ -40,6 +42,7 @@ export default class BlogDetail extends React.Component {
             </div>
           </div>
         </div>
+
         {/* {blog && <Conversations></Conversations>} */}
       </>
     );

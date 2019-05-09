@@ -16,7 +16,7 @@ export default class TopNav extends React.Component {
             <div className={styles.andChar}> & </div>
             <Link to="/blog"className={styles.navItems}>
               <img 
-                src={isProduction ? "/blog/public/f-read-box.png": "/f-read-box.png"}
+                src={"/f-read-box.png"}
                 className={styles.logo} alt="f/Read"
               ></img>
               <span>f/Blog</span>

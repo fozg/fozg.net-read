@@ -12,7 +12,7 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 8);
   }
 };
-const withTracker = (WrappedComponent, options = {}) => {
+const withTracker = (WrappedComponent, options = {}, data) => {
   if (process.env.NODE_ENV == 'development') {
     return WrappedComponent
   }
@@ -43,7 +43,7 @@ const withTracker = (WrappedComponent, options = {}) => {
     }
 
     render() {
-      return <WrappedComponent {...this.props} />;
+      return <WrappedComponent {...this.props} {...data} />;
     }
   };
 

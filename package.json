@@ -1,29 +1,30 @@
 {
-  "name": "fozg.net-read",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "name": "my-razzle-app",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && yarn build && cd .. && nodemon ./index",
-    "start:fast": "nodemon ./index",
-    "start:prod": "NODE_ENV=production node index",
-    "server:deploy": "git pull & pm2 restart read",
-    "deploy": "ssh root@fozg.net cd /home/fozg.net-read; npm run server:deploy"
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    "classnames": "^2.2.6",
     "express": "^4.16.4",
-    "fcorejs": "https://github.com/FozgDotNet/fcorejs.git",
-    "highlight.js": "^9.14.2",
-    "jade": "^1.11.0",
-    "marked": "^0.5.2",
-    "mongoose": "^5.3.13",
-    "node-prismjs": "^0.1.2",
-    "prismjs": "^1.15.0",
-    "pug": "^2.0.3",
-    "yaml-front-matter": "^4.0.0"
-  }
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "razzle": "^3.0.0",
+    "react": "^16.8.6",
+    "react-content-loader": "^4.2.1",
+    "react-dom": "^16.8.6",
+    "react-ga": "^2.5.7",
+    "react-router-dom": "^5.0.0",
+    "sass-loader": "^7.1.0"
+  },
+  "description": "**WARNING: This is the documentation for `razzle@next` (Webpack 4).**   [Go here for for razzle@0.8.x (stable) docs (Webpack 3)](https://github.com/jaredpalmer/razzle/tree/master).",
+  "main": "index.js",
+  "devDependencies": {
+    "css-loader": "^2.1.1"
+  },
+  "author": ""
 }
