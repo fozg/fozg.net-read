@@ -13,9 +13,9 @@ code {
     monospace;
 }
 
-.container {
-  max-width: 1020px !important;
-}
+// .container {
+//   max-width: 1020px !important;
+// }
 
 .row {
   display: flex;
@@ -80,7 +80,7 @@ pre code {
     font-size: 14px;
     max-width: 100%;
     @media screen and (min-width: 992px){
-      max-width: 640px;
+      // max-width: 640px;
     }
   }
   blockquote {
