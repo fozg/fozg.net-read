@@ -20,7 +20,7 @@
     "highlight.js": "^9.14.2",
     "jade": "^1.11.0",
     "marked": "^0.6.1",
-    "mongoose": "^5.3.13",
+    "mongoose": "^5.7.5",
     "node-prismjs": "^0.1.2",
     "prismjs": "^1.15.0",
     "pug": "^2.0.3",
