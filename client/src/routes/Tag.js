@@ -14,7 +14,7 @@ export default class Tag extends React.Component {
     return (
       <div>
         <div className="container">
-          <h1 style={{fontWeight: 800}}>#{tagName}</h1>
+          <h1 style={{fontWeight: 800, fontSize: '4em'}}>#{tagName}</h1>
         </div>
         <Blog tagFilter={tagName} />
       </div>

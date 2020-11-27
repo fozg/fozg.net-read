@@ -32,12 +32,12 @@ export default class BlogDetail extends React.Component {
                 onBlogLoaded={this._onBlogLoaded}
               />
             </div>
-            <div className={styles.sidebar + ""}>
+            {/* <div className={styles.sidebar + ""}>
               <div className={styles.sticky}>
                 <AuthorBox author={blog ? blog.author : null} />
                 {blog && <SideNav author={blog.author} />}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* {blog && <Conversations></Conversations>} */}

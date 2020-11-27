@@ -1,26 +1,30 @@
 import React from 'react';
 import moment from 'moment';
-import {Link} from 'react-router-dom';
-import {callAPI} from '../lib';
-import {API} from '../consts';
-import cx from 'classnames';
+import { Link } from 'react-router-dom';
+import { callAPI } from '../lib';
+import { API } from '../consts';
 import styles from './Blog.module.scss';
+import BlogListLoader from '../components/BlogListLoader';
 
 export default class Blog extends React.Component {
   state = {
-    blogs: []
+    blogs: [],
+    loading: false
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // TODO: hard code for now
-    new callAPI(API.BLOGS_BY_USER , "GET", {username: "fozg"}).call().then(
+    this.setState({ loading: true })
+    new callAPI(API.BLOGS_BY_USER, "GET", { username: "fozg" }).call().then(
       blogs => {
-        this.setState({blogs})
+        this.setState({ blogs })
       }
-    )
+    ).finally(() => {
+      this.setState({ loading: false })
+    })
   }
 
-  render () {
+  render() {
     const {
       blogs
     } = this.state;
@@ -28,10 +32,20 @@ export default class Blog extends React.Component {
       tagFilter
     } = this.props;
 
+    if (this.state.loading) {
+      return (
+        <div className="container">
+          <div className={styles.blogsWrap}>
+            <BlogListLoader />
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className="container">
         <div className={styles.blogsWrap}>
-          {blogs.filter(blog => tagFilter ? 
+          {blogs.filter(blog => tagFilter ?
             (blog.tags && blog.tags.findIndex(t => t.tagName === tagFilter) > -1) : true).map((blog, idx) => (
               <div key={blog.slug} className={styles.blogItem}>
                 <span className={styles.time}>{moment(blog.created).fromNow()}</span>
@@ -44,7 +58,7 @@ export default class Blog extends React.Component {
                     <Link
                       to={`/blog/t/${tag.tagName}`}
                       key={tag.tagName}
-                      style={{backgroundColor: tag.bgColor, color: tag.color}}
+                      style={{ backgroundColor: tag.bgColor, color: tag.color }}
                       className={styles.tagItem}
                     >
                       <span>
@@ -58,6 +72,6 @@ export default class Blog extends React.Component {
           }
         </div>
       </div>
-    )   
+    )
   }
 }

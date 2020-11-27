@@ -13,9 +13,9 @@
   right: 0;
   left: 0;
   height: 50px;
-  background: #fff;
+  background: #111;
   z-index: 1010;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000 ;
   box-shadow: 0 0px 2px rgba(0,0,0,.1);
   transform: translateY(-60px);
   transition: transform .5s;
@@ -40,7 +40,7 @@
 
 .title {
   margin: 0;
-  color: #555;
+  color: #aaa;
   font-size: 1.1em;
 }
 
@@ -53,5 +53,5 @@
 .by {
   margin: 0 7px;
   font-size: .8em;
-  color: #666;
+  color: #999;
 }
