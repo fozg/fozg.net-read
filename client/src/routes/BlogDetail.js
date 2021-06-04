@@ -3,19 +3,24 @@ import React from "react";
 import SideNav from "../components/SideNav";
 import BlogContent from "../components/BlogContent";
 import AuthorBox from "../components/AuthorBox";
-import CoverImage from '../components/CoverImage';
+import CoverImage from "../components/CoverImage";
 // import Conversations from '../components/Conversations';
 
 import styles from "./BlogDetail.module.scss";
 
 export default class BlogDetail extends React.Component {
   state = {
-    blog: null
+    blog: null,
   };
 
-  _onBlogLoaded = blog => {
+  _onBlogLoaded = (blog) => {
     this.setState({ blog });
   };
+  componentDidMount() {
+    setTimeout(() => {
+      window.renderFC && window.renderFC();
+    }, 100);
+  }
 
   render() {
     const slug = this.props.match.params.slug;
@@ -38,6 +43,10 @@ export default class BlogDetail extends React.Component {
                 {blog && <SideNav author={blog.author} />}
               </div>
             </div> */}
+          </div>
+
+          <div className={styles.commentsroot}>
+            <div id="fconversations" />
           </div>
         </div>
         {/* {blog && <Conversations></Conversations>} */}
