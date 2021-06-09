@@ -12,8 +12,8 @@ export default ({ tags }) => {
             style={{
               background: "#eee",
               padding: "1px 8px",
-              borderRadius: 5,
-              marginRight: 5,
+              borderRadius: 15,
+              marginRight: 10,
               backgroundColor: tag.bgColor,
               color: tag.color
             }}

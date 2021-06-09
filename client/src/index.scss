@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background: #111;
   color: #d4d4d4;
 }
@@ -26,17 +27,17 @@ code {
 
 #navigation {
   position: fixed;
-  background: rgba(255,255,255,.95);
+  background: rgba(255, 255, 255, 0.95);
   height: 50px;
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: rgba(0,0,0,.1);
+  border-bottom: rgba(0, 0, 0, 0.1);
 }
 
 /* mix server + client app */
 .mixer {
-  position: relative
+  position: relative;
 }
 .mixer-server {
   top: 0;
@@ -47,7 +48,12 @@ code {
   position: sticky;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
 }
 
@@ -63,14 +69,14 @@ a:hover {
   text-decoration: underline;
 }
 code {
-  background-color: rgba(27,31,35,.05);
-  padding:2px 3px;;
+  background-color: rgba(27, 31, 35, 0.05);
+  padding: 2px 3px;
 }
 pre code {
   /* font-size: 1em; */
   color: #ccc;
 }
-.content{
+.content {
   pre {
     background-color: #26282c;
     border-radius: 10px;
@@ -78,7 +84,7 @@ pre code {
     width: 100%;
     overflow-x: auto;
     font-size: 14px;
-    
+
     // @media screen and (min-width: 992px){
     //   margin: 5px -20px;
     //   // max-width: 640px;
@@ -88,12 +94,12 @@ pre code {
     // }
   }
   blockquote {
-    border-left: 5px solid #5da0a1;
+    border-left: 5px solid #26282c;
     // padding: 0 20px;
     /* font-weight: 300; */
     margin: 0;
     background: #0a0a0a;
-    color: #e2777a;
+    color: #4caf50;
     font-style: italic;
     padding: 0px 10px 0px 20px;
     // margin-block-start: 10px;
@@ -101,15 +107,16 @@ pre code {
       padding: 10px 0;
     }
   }
-  ul, ol {
+  ul,
+  ol {
     padding-left: 1.6em;
   }
   ol {
     list-style: none;
     counter-reset: li;
-    &>li {
+    & > li {
       // counter-increment: li;
-      margin-top: .25em;
+      margin-top: 0.25em;
       &::before {
         content: counter(li) ". ";
         counter-increment: li;
@@ -123,9 +130,9 @@ pre code {
   }
 }
 hr {
-  background-color: #000  ;
+  background-color: #000;
   border: 0;
-  height: .25em;
+  height: 0.25em;
   margin: 24px 0;
   padding: 0;
 }
@@ -133,7 +140,7 @@ table {
   margin: auto;
 }
 table th {
-  background-color: #333  ;
+  background-color: #333;
   padding: 5px;
 }
 table td {
@@ -240,17 +247,12 @@ hue-6-2: #e6c07b
 //   text-decoration: underline;
 // }
 
-
 // .clearfix::after {
 //   display: block;
 //   content: "";
 //   clear: both;
 //   box-sizing: border-box;
 // }
-
-
-
-
 
 ///////////////////////////
 /* PrismJS 1.15.0
@@ -261,121 +263,118 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
- code[class*="language-"],
- pre[class*="language-"] {
-   color: #ccc;
-   background: none;
-   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-   font-size: 1em;
-   text-align: left;
-   white-space: pre;
-   word-spacing: normal;
-   word-break: normal;
-   word-wrap: normal;
-   line-height: 1.5;
- 
-   -moz-tab-size: 4;
-   -o-tab-size: 4;
-   tab-size: 4;
- 
-   -webkit-hyphens: none;
-   -moz-hyphens: none;
-   -ms-hyphens: none;
-   hyphens: none;
- 
- }
- 
- /* Code blocks */
- pre[class*="language-"] {
-   padding: 1em;
-   margin: .5em 0;
-   overflow: auto;
- }
- 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-   background: #2d2d2d;
- }
- 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-   padding: .1em;
-   border-radius: .3em;
-   white-space: normal;
- }
- 
- .token.comment,
- .token.block-comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-   color: #999;
- }
- 
- .token.punctuation {
-   color: #ccc;
- }
- 
- .token.tag,
- .token.attr-name,
- .token.namespace,
- .token.deleted {
-   color: #e2777a;
- }
- 
- .token.function-name {
-   color: #6196cc;
- }
- 
- .token.boolean,
- .token.number,
- .token.function {
-   color: #f08d49;
- }
- 
- .token.property,
- .token.class-name,
- .token.constant,
- .token.symbol {
-   color: #f8c555;
- }
- 
- .token.selector,
- .token.important,
- .token.atrule,
- .token.keyword,
- .token.builtin {
-   color: #cc99cd;
- }
- 
- .token.string,
- .token.char,
- .token.attr-value,
- .token.regex,
- .token.variable {
-   color: #7ec699;
- }
- 
- .token.operator,
- .token.entity,
- .token.url {
-   color: #67cdcc;
- }
- 
- .token.important,
- .token.bold {
-   font-weight: bold;
- }
- .token.italic {
-   font-style: italic;
- }
- 
- .token.entity {
-   cursor: help;
- }
- 
- .token.inserted {
-   color: green;
- }
- 
- 
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
